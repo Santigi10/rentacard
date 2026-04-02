@@ -1,0 +1,188 @@
+/* SECCIÓN */
+.destinos {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.titulo-destinos {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #d4af37;
+  font-family: 'Playfair Display', serif;
+}
+
+/* CONTENEDOR */
+.lista-destinos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 🔥 CASILLA LARGA */
+.destino-largo {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 25px;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+/* HOVER */
+.destino-largo:hover {
+  transform: scale(1.02);
+}
+
+.info-viajes {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 20px;
+  text-align: center;
+  color: #f7f7f7;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.info-viajes h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.info-viajes p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* línea decorativa */
+.info-viajes::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: gold;
+  margin: 30px auto 0;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  color: white;
+  transition: 0.3s;
+}
+
+.destino-largo:hover .overlay {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+}
+
+/* TEXTO GRANDE 🔥 */
+.overlay h3 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.overlay p {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* 🔥 BANNER PRINCIPALES DESTINOS */
+.banner-destinos {
+  width: 100%;
+  height: 60vh;
+  background-image: url("../img/banner-avion.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* CAPA OSCURA */
+.banner-destinos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* CONTENIDO */
+.contenido-banner {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+/* TITULO 🔥 */
+.contenido-banner h1 {
+  font-size: 60px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+/* SUBTITULO */
+.contenido-banner p {
+  font-size: 22px;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .contenido-banner h1 {
+    font-size: 40px;
+  }
+
+  .contenido-banner p {
+    font-size: 18px;
+  }
+}
+
+/* 📱 RESPONSIVE */
+
+/* tablet */
+@media (max-width: 1024px) {
+  .grid-destinos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* celular */
+@media (max-width: 600px) {
+  .grid-destinos {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+}
+
+
+.nosotros-banner {
+    width: 100%;
+    height: clamp(300px, 60vh, 600px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/banner2-camioneta.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.nosotros-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.titulo-nosotros {
+    position: relative;
+    color: #fff;
+    font-size: clamp(50px, 8vw, 110px);
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+.seccionfinal {
+    width: 100%;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #a28c1e 0%, #000 100%);
+    color: #ffffff;
+}
+.seccion {
+    width: 100%;
+    padding: 80px 20px;
+}
+
+.negro {
+    background: linear-gradient(180deg, #000 0%, #111 100%);
+    color: #fff;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+
+.contenedor.reverse {
+    flex-direction: row-reverse;
+}
+
+
+.texto {
+    flex: 1;
+}
+
+.texto h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+.texto h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #d3b025;
+    display: block;
+    margin-top: 10px;
+}
+
+.texto p {
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.7;
+    color: #ccc;
+}
+
+
+.imagen {
+    flex: 1;
+    text-align: center;
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.6));
+    transition: transform 0.4s ease;
+}
+
+
+.imagen img:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contenedor.reverse {
+        flex-direction: column;
+    }
+
+    .texto h2::after {
+        margin: 10px auto;
+    }
+
+    .imagen img {
+        max-width: 260px;
+    }
+}
